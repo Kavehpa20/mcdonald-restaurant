@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mcdonald's Restaurant</title>
+  </head>
+  <body class="font-vazir bg-bg-color">
+    <div
+      id="root"
+      class="container mx-auto grid grid-cols-1 md:flex gap-8 justify-around my-8 items-start"
+    >
+      <!-- cart section -->
+      <section
+        dir="rtl"
+        class="bg-gray-200 rounded-lg lg:w-1/4 p-4 text-sm flex flex-col gap-y-4 mx-4 order-2 md:order-1"
+      >
+        <div class="flex flex-nowrap w-full gap-x-1 justify-between">
+          <span>جمع کل سفارشات:</span>
+          <div>
+            <span id="total-orders">20000</span>
+            <span> تومان</span>
+          </div>
+        </div>
+        <div class="flex flex-nowrap w-full gap-x-1 justify-between">
+          <span>حق سرویس و کارمزد: </span>
+          <div>
+            <span id="services-price">20000</span>
+            <span> تومان</span>
+          </div>
+        </div>
+        <div class="flex flex-nowrap w-full gap-x-1 justify-between">
+          <span>تخفیف:</span>
+          <div>
+            <span id="discount-fee">0 </span>
+            <span> درصد</span>
+          </div>
+        </div>
+        <form
+          id="discount-checker"
+          class="flex flex-nowrap w-full items-center justify-center"
+        >
+          <input
+            id="discount-input"
+            class="bg-white py-1 px-4 rounded-s-lg w-full"
+            type="text"
+            placeholder="کد تخفیف"
+          />
+          <button class="rounded-e-lg bg-red-500 text-white hover:bg-red-600">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 12.75 6 6 9-13.5"
+              />
+            </svg>
+          </button>
+        </form>
+        <div
+          class="flex flex-nowrap w-full gap-x-1 justify-between bg-yellow-400 p-1"
+        >
+          <span>مبلغ قابل پرداخت:</span>
+          <div>
+            <span id="amount-payable">0</span>
+            <span> تومان</span>
+          </div>
+        </div>
+        <button
+          id="submit-btn"
+          class="flex justify-center items-center w-full bg-red-500 hover:bg-red-600 py-3 text-white rounded-sm"
+        >
+          ثبت سفارش
+        </button>
+      </section>
+
+      <!-- products section -->
+      <section
+        class="bg-white rounded-lg overflow-hidden mx-4 order-1 md:order-2"
+      >
+        <div
+          class="py-5 px-4 w-full font-bold text-3xl text-center shadow-box relative z-10"
+        >
+          <span> رستوران مک دونالد شعبه تهران </span>
+        </div>
+        <div class="sm:mx-0 max-h-[400px] overflow-y-auto">
+          <div
+            class="bg-gray-200 grid grid-cols-1 lg:grid-cols-2 grow"
+            id="foods-container"
+          >
+            <div
+              class="flex justify-between gap-8 bg-white mt-2 mx-2 mb-2 px-8 py-1"
+            >
+              <div class="flex flex-col gap-4 items-end">
+                <p>سالاد سزار</p>
+                <div class="flex gap-x-1">
+                  <span class="order-2">8000</span>
+                  <span class="order-1"> تومان </span>
+                </div>
+                <div class="w-full flex justify-between gap-x-16">
+                  <div
+                    class="inline-flex gap-3 items-center justify-center order-2"
+                  >
+                    <button
+                      class="px-0 py-0 text-white rounded-s-lg text-3xl flex justify-center items-center bg-red-500"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M5 12h14"
+                        />
+                      </svg>
+                    </button>
+                    <span>0</span>
+                    <button
+                      class="px-0 py-0 text-white rounded-e-lg text-2xl flex justify-center items-center bg-red-500"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 4.5v15m7.5-7.5h-15"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="flex gap-x-1 order-1">
+                    <span class="order-2">0</span
+                    ><span class="order-1">تومان</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <img
+                  class="size-full"
+                  src="/public/img/ceasar.png"
+                  alt="ceasar"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full h-7 bg-gray-200"></div>
+      </section>
+    </div>
+    <div
+      id="modal"
+      class="bg-gray-900/60 w-full h-full fixed top-0 left-0 hidden justify-center items-center"
+    >
+      <div class="bg-gray-100 h-52 w-96 flex flex-col rounded-lg">
+        <button
+          class="p-4 bg-red-500 hover:bg-red-600 text-white font-black flex items-center justify-center w-8 h-8 rounded-lg mt-1 ml-1"
+          id="close-modal-btn"
+        >
+          &#x2715;
+        </button>
+        <p class="text-center mt-14">سفارش شما با موفقیت ثبت گردید</p>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

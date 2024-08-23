@@ -1,0 +1,40 @@
+@font-face {
+  font-family: vazir;
+  src: url("/font/Vazir-Medium-FD.woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffb8b8;
+  border-radius: 10px;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff7300;
+  border-radius: 10px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9b0000;
+}
+
+/* Shadow Box */
+
+.shadow-box {
+  -webkit-box-shadow: 0px 5px 34px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 34px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 34px 0px rgba(0, 0, 0, 0.75);
+}
